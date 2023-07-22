@@ -5,7 +5,12 @@ function App() {
 
   return (
     <main>
-      <h1>Am I working?</h1>
+      <div className="game">
+        <div className="intro">
+          <h1>Tenzies Game</h1>
+          <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+        </div>
+      </div>
     </main>
   )
 }

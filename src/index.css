@@ -1,0 +1,37 @@
+@import url(./reset.css);
+
+body {
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+}
+
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100dvh;
+}
+
+main {
+  width: 360px;
+  height: 379px;
+  background-color: #2B283A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.game {
+  width: 320px;
+  height: 320px;
+  background-color: #f5f5f5;
+  display: flex;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.intro h1,
+.intro p {
+  text-align: center;
+}
