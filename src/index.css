@@ -26,7 +26,7 @@ main {
   width: 320px;
   height: 320px;
   background-color: #f5f5f5;
-  display: flex;
+  /* display: flex; */
   border-radius: 10px;
   padding: 1em;
 }
@@ -34,4 +34,29 @@ main {
 .intro h1,
 .intro p {
   text-align: center;
+}
+
+.dice {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  border-radius: 0.23831rem;
+  background-color: #FFF;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);
+  display: grid;
+  place-items: center;
+}
+
+.dice p {
+  font-weight: 700;
+  font-size: 1.286875rem;
+}
+
+.dice-group {
+  margin-top: 1em;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 1em;
 }
