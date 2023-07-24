@@ -3,7 +3,6 @@ import React from "react"
 import Die from "./Die"
 
 function App() {
-  const value = 1;
 
   const allNewDice = () => {
     const numArray = [];
@@ -18,6 +17,9 @@ function App() {
       return <Die value={data} />
   })
 
+  const rollDice = () => {
+    setDiceNum(allNewDice())
+  }
 
   return (
     <main>
@@ -28,6 +30,9 @@ function App() {
         </div>
         <div className="dice-group">
           {dieComp}
+        </div>
+        <div className="roll-grp">
+          <button className="roll-btn" onClick={rollDice}>Roll</button>
         </div>
       </div>
     </main>
