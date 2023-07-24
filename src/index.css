@@ -47,9 +47,15 @@ main {
   place-items: center;
 }
 
-.dice p {
+.dice-number {
   font-weight: 700;
   font-size: 1.286875rem;
+}
+
+.dice button  {
+  background-color: #FFF;
+  border: none;
+  cursor: pointer;
 }
 
 .dice-group {

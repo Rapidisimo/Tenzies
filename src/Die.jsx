@@ -3,9 +3,9 @@ import React from "react";
 export default function Die(props) {
     return(
         <div className="dice">
-            <p className="dice-number">
+            <button className="dice-number">
                 {props.value}
-            </p>
+            </button>
         </div>
     )
 }

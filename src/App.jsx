@@ -5,6 +5,20 @@ import Die from "./Die"
 function App() {
   const value = 1;
 
+  const allNewDice = () => {
+    const numArray = [];
+    for(let i = 1; i <= 10; i++){
+        const randNum = Math.floor(Math.random() * 6 + 1);
+        numArray.push(randNum)
+    }
+    return numArray
+  }
+  const [diceNum, setDiceNum] = React.useState(allNewDice())
+  const dieComp = diceNum.map( (data) => {
+      return <Die value={data} />
+  })
+
+
   return (
     <main>
       <div className="game">
@@ -13,16 +27,7 @@ function App() {
           <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
         </div>
         <div className="dice-group">
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
-          <Die value={value}/>
+          {dieComp}
         </div>
       </div>
     </main>
