@@ -15,7 +15,7 @@ function App() {
   }
   const [diceNum, setDiceNum] = React.useState(allNewDice())
   const dieComp = diceNum.map( (data) => {
-      return <Die value={data.value} key={data.id} />
+      return <Die value={data.value} key={data.id} held={data.isHeld} />
   })
 
   const rollDice = () => {
