@@ -8,13 +8,13 @@ function App() {
     const numArray = [];
     for(let i = 1; i <= 10; i++){
         const randNum = Math.floor(Math.random() * 6 + 1);
-        numArray.push(randNum)
+        numArray.push({value: randNum, isHeld: false})
     }
     return numArray
   }
   const [diceNum, setDiceNum] = React.useState(allNewDice())
   const dieComp = diceNum.map( (data) => {
-      return <Die value={data} />
+      return <Die value={data.value} />
   })
 
   const rollDice = () => {
