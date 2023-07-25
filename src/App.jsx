@@ -5,6 +5,11 @@ import {nanoid} from "nanoid"
 
 function App() {
 
+  const holdDice = (id) => {
+    console.log(id)
+  }
+
+
   const allNewDice = () => {
     const numArray = [];
     for(let i = 1; i <= 10; i++){
@@ -15,7 +20,7 @@ function App() {
   }
   const [diceNum, setDiceNum] = React.useState(allNewDice())
   const dieComp = diceNum.map( (data) => {
-      return <Die value={data.value} key={data.id} held={data.isHeld} />
+      return <Die value={data.value} key={data.id} held={data.isHeld} id={data.id} hold={holdDice} />
   })
 
   const rollDice = () => {

@@ -6,7 +6,7 @@ export default function Die(props) {
 
     return(
         <div className={`dice ${heldValue}`}>
-            <button className="dice-number">
+            <button className="dice-number" onClick={ () => (props.hold(props.id)) } >
                 {props.value}
             </button>
         </div>
