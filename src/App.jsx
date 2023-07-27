@@ -30,13 +30,12 @@ function App() {
  * but you can do whichever way makes the most sense to you.
  */
 
-    const holdDice = (id) => {
+    function holdDice(id) {
       setDiceNum(prevData => prevData.map( diceData => {
         if(diceData.id === id){
           return {...diceData, isHeld: !diceData.isHeld}
         }else return diceData
-      })
-  
+      }))
     }
 
   const rollDice = () => {
