@@ -18,18 +18,6 @@ function App() {
       return <Die value={data.value} key={data.id} held={data.isHeld} id={data.id} hold={holdDice} />
   })
 
-    /**
- * Challenge: Update the `holdDice` function to flip
- * the `isHeld` property on the object in the array
- * that was clicked, based on the `id` prop passed
- * into the function.
- * 
- * Hint: as usual, there's > 1 way to accomplish this.
- * I'll be using `dice.map()` and checking for the `id`
- * of the die to determine which one to flip `isHeld` on,
- * but you can do whichever way makes the most sense to you.
- */
-
     function holdDice(id) {
       setDiceNum(prevData => prevData.map( diceData => {
         if(diceData.id === id){
@@ -38,8 +26,28 @@ function App() {
       }))
     }
 
+    /**
+ * Challenge: Update the `rollDice` function to not just roll
+ * all new dice, but instead to look through the existing dice
+ * to NOT role any that are being `held`.
+ * 
+ * Hint: this will look relatively similiar to the `holdDice`
+ * function below. When creating new dice, remember to use
+ * `id: nanoid()` so any new dice have an `id` as well.
+ */
+
   const rollDice = () => {
-    setDiceNum(allNewDice())
+    setDiceNum(prevData => prevData.map( diceData => {
+      if(diceData.isHeld) {
+        return diceData
+      }else {
+        return {
+          value: Math.floor(Math.random() * 6 + 1),
+          isHeld: false,
+          id: nanoid()
+        }
+      }
+    } ))
   }
 
   return (
