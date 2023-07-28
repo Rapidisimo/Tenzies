@@ -17,6 +17,11 @@ function App() {
   const dieComp = diceNum.map( (data) => {
       return <Die value={data.value} key={data.id} held={data.isHeld} id={data.id} hold={holdDice} />
   })
+  const [tenzies, setTenzies] = React.useState(false);
+
+  React.useEffect( () => {
+    console.log('Dice state changed')
+  },[diceNum])
 
     function holdDice(id) {
       setDiceNum(prevData => prevData.map( diceData => {
@@ -25,16 +30,6 @@ function App() {
         }else return diceData
       }))
     }
-
-    /**
- * Challenge: Update the `rollDice` function to not just roll
- * all new dice, but instead to look through the existing dice
- * to NOT role any that are being `held`.
- * 
- * Hint: this will look relatively similiar to the `holdDice`
- * function below. When creating new dice, remember to use
- * `id: nanoid()` so any new dice have an `id` as well.
- */
 
   const rollDice = () => {
     setDiceNum(prevData => prevData.map( diceData => {
