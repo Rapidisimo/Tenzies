@@ -31,7 +31,10 @@ function App() {
   React.useEffect( () => {
     const diceHeld = diceNum.every( e => e.isHeld === true)
     const diceValue = diceNum.every( e => e.value === diceNum[0].value)
-    diceHeld && diceValue ? console.log("You Won!") : ""
+    if(diceHeld && diceValue){
+      console.log("You Won!")
+      setTenzies(true)
+    }
   },[diceNum])
 
     function holdDice(id) {
