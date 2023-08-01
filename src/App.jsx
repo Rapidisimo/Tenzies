@@ -36,7 +36,6 @@ function App() {
     if(diceHeld && diceValue){
       console.log("You Won!")
       setTenzies(true)
-      document.querySelector('.roll-btn').textContent = 'New Game';
     }
   },[diceNum])
 
@@ -74,7 +73,7 @@ function App() {
           {dieComp}
         </div>
         <div className="roll-grp">
-          <button className="roll-btn" onClick={rollDice}>Roll</button>
+          <button className="roll-btn" onClick={rollDice}>{tenzies ? "New Game" : "Roll"}</button>
         </div>
       </div>
     </main>
