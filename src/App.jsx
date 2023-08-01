@@ -19,8 +19,19 @@ function App() {
   })
   const [tenzies, setTenzies] = React.useState(false);
 
+  /**
+ * Challenge: Check the dice array for these winning conditions:
+ * 1. All dice are held, and
+ * 2. all dice have the same value
+ * 
+ * If both conditions are true, set `tenzies` to true and log
+ * "You won!" to the console
+ */
+
   React.useEffect( () => {
-    console.log('Dice state changed')
+    const diceHeld = diceNum.every( e => e.isHeld === true)
+    const diceValue = diceNum.every( e => e.value === diceNum[0].value)
+    diceHeld && diceValue ? console.log("You Won!") : ""
   },[diceNum])
 
     function holdDice(id) {
