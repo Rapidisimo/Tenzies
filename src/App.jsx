@@ -20,15 +20,6 @@ function App() {
   })
   const [tenzies, setTenzies] = React.useState(false);
 
-  /**
- * Challenge: Tie off loose ends!
- * 1. If tenzies is true, Change the button text to "New Game"
- * 2. If tenzies is true, use the "react-confetti" package to
- *    render the <Confetti /> component 🎉
- * 
- *    Hint: don't worry about the `height` and `width` props
- *    it mentions in the documentation.
- */
 
   React.useEffect( () => {
     const diceHeld = diceNum.every( e => e.isHeld === true)
@@ -39,26 +30,35 @@ function App() {
     }
   },[diceNum])
 
-    function holdDice(id) {
-      setDiceNum(prevData => prevData.map( diceData => {
-        if(diceData.id === id){
-          return {...diceData, isHeld: !diceData.isHeld}
-        }else return diceData
-      }))
-    }
+  function holdDice(id) {
+    setDiceNum(prevData => prevData.map( diceData => {
+      if(diceData.id === id){
+        return {...diceData, isHeld: !diceData.isHeld}
+      }else return diceData
+    }))
+  }
+  /**
+ * Challenge: Allow the user to play a new game when the
+ * button is clicked and they've already won
+ */
 
   const rollDice = () => {
-    setDiceNum(prevData => prevData.map( diceData => {
-      if(diceData.isHeld) {
-        return diceData
-      }else {
-        return {
-          value: Math.floor(Math.random() * 6 + 1),
-          isHeld: false,
-          id: nanoid()
+    if(!tenzies) {
+      setDiceNum(prevData => prevData.map( diceData => {
+        if(diceData.isHeld) {
+          return diceData
+        }else {
+          return {
+            value: Math.floor(Math.random() * 6 + 1),
+            isHeld: false,
+            id: nanoid()
+          }
         }
-      }
-    } ))
+      } ))
+    }else {
+      setTenzies(false)
+      setDiceNum(allNewDice())
+    }
   }
 
   return (
