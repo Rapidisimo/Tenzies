@@ -1,4 +1,5 @@
-# Scrimba React Basics Project
+# Tezies Dice Game
+## Scrimba React Basics Project
 
 ### [Live Version](https://rapidisimo.github.io/Tenzies/)
 
