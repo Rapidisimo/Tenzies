@@ -1,8 +1,21 @@
-# React + Vite
+# Scrimba React Basics Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### [Live Version](https://rapidisimo.github.io/Tenzies/)
 
-Currently, two official plugins are available:
+## My Objectives
+Understand the lessons and produce the same work outside of the Scrimba editor in my local VSCode enviroment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stretch Goals
+Add additional features to the game on my own.
+Examples:
+- Dots on dice via CSS instead of digits
+- Track the number of rolls
+- Track the time it took to win
+- Save data to local storage: Time and number or Rolls
+
+## Requirements
+1. Solve the challenges on my own and produce working version of the game.
+
+
+## Preview
+![App-Preview](./preview.png)
